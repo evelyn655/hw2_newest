@@ -64,25 +64,25 @@ int main(void)
             for (int x=0; x < (t*0.3);x++) {
                 i += (1.0/(t*0.3));
                 aout = i;
-                ADCdata[count]=Ain;
+                ADCdata[count]=Ain;             // comment out when not sampling
                 count++;
                 ThisThread::sleep_for(1ms);
             }
             for (int x=0; x<(t*0.7); x++) {
                 i -= (1.0/(t*0.7));
                 aout = i;
-                ADCdata[count]=Ain;
+                ADCdata[count]=Ain;             // comment out when not sampling
                 count++;
                 ThisThread::sleep_for(1ms);
             }
-            if (count>=2000) break;
+            if (count>=2000) break;             // comment out when not sampling
         }
 
-        for (int x=500; x<1500; x++) {
-            printf("%f\r\n", ADCdata[x]);
-        }
+        for (int x=500; x<1500; x++) {          // comment out when not sampling
+            printf("%f\r\n", ADCdata[x]);       // comment out when not sampling
+        }                                       // comment out when not sampling
 
-        ThisThread::sleep_for(10ms);
+        ThisThread::sleep_for(10ms);            
     }
 }
 
