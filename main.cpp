@@ -50,10 +50,10 @@ int main(void)
                 print(counter); 
                 ThisThread::sleep_for(50ms);
             } else if (but_SEL) {
-                if (counter==3) t=10;
-                else if (counter==2) t=20;
-                else if (counter==1) t=40;
-                else if (counter==0) t=100;
+                if (counter==3) t=10;           // 100Hz
+                else if (counter==2) t=20;      // 50Hz
+                else if (counter==1) t=40;      // 25Hz
+                else if (counter==0) t=100;     // 10Hz
                 break;
             }
         }
