@@ -106,7 +106,6 @@ void print(int counter) {
         uLCD.color(RED);
         uLCD.locate(1, 4);
         uLCD.printf("\n50Hz\n");
-        
     } else if (counter==1) {
         uLCD.color(RED);
         uLCD.locate(1, 6);
