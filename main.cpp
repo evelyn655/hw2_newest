@@ -44,7 +44,6 @@ int main(void)
                 else counter=3; 
                 print(counter);
                 ThisThread::sleep_for(50ms);
-            
             } else if (but_DOWN) {
                 if(counter>0) counter--;
                 else counter=0;
