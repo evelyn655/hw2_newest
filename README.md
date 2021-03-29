@@ -20,6 +20,6 @@ while (1) {
  1. variable t: 將一周期的波切成t格來完成。
  2. S=3 for my student ID,  所以 t 格前 30% 是三角波上升的部分，後 70% 則是三角波往下的部分。
  3. 一個波的週期為 t 乘上 sleep for 的時間 1ms，頻率則為週期之倒數。
- 
+ ![image](https://drive.google.com/drive/u/2/folders/1mYAm3xzJ0zZAh_EW9i4S6wNL--XxZ-g_,13800590306375)
  ###
  
