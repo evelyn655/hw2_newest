@@ -1,4 +1,4 @@
-# Homework 2 Digital, Analog I/O and 
+# Homework 2 Digital, Analog I/O and LCD
 
 ## How to set up my program
 ### 1. Waveform generating:
