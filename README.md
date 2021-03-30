@@ -25,9 +25,9 @@ while (1) {
 ![](https://i.imgur.com/OvIcvH4.png)
 
 ### 2. RC filter
-R = 30 kΩ 
-C = 0.22 µF 
-截止頻率約為 24 Hz
+R = 30 kΩ   
+C = 0.22 µF    
+截止頻率約為 24 Hz   
 
 經過RC filter之後的三角波型。(10Hz)
 ![](https://i.imgur.com/0Ih3lm0.png)
