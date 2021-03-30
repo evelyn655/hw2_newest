@@ -21,7 +21,7 @@ while (1) {
  2. S=3 for my student ID,  所以 t 格前 30% 是三角波上升的部分，後 70% 則是三角波往下的部分。
  3. 一個波的週期為 t 乘上 sleep for 的時間 1ms，頻率則為週期之倒數。
 
-下圖為經過RC filter前的三角波。
+下圖為經過RC filter前的三角波。(1Hz)
 ![](https://i.imgur.com/OvIcvH4.png)
 
 ### 2. RC filter
