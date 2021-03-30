@@ -75,7 +75,7 @@ for (int x=500; x<1500; x++) {
 
 ### 5. Button Inputs and Frequency Selecting
 共有四種可以選擇的頻率，因此使用一個可以數0-3的counter。        
-每個數字會對應一個頻率選擇(t的賦值)，並在 uLCD 上印出目前所選擇到的頻率(print函示)。
+每個數字會對應一個頻率選擇(t的賦值)，並在 uLCD 上印出目前所選擇到的頻率(print函式)。
 ```
 while(1) {
             if (but_UP) {
