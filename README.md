@@ -107,6 +107,7 @@ while(1) {
 ### 1. 10Hz
 picoscope:
 ![](https://i.imgur.com/seohYze.png)
+
 FFT:
 ![](https://i.imgur.com/m62wiTX.png)
 
