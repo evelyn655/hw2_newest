@@ -135,7 +135,7 @@ void print(int counter) {
         uLCD.color(RED);
         uLCD.locate(1, 2);
         uLCD.printf("\n100Hz\n");
-    } else if (counter==2) {        // 以下同理，依照 counter 算到的數字，highlight 對應的頻率
+    } else if (counter==2) {        // 以下同理，依照 counter 數到的數字，highlight 對應的頻率
         uLCD.color(RED);
         uLCD.locate(1, 4);
         uLCD.printf("\n50Hz\n");
