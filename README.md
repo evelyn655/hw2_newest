@@ -74,13 +74,15 @@ for (int x=500; x<1500; x++) {
 因此我先儲存了足夠的資料數量後，才一次 print 出來。
 
 ### 5. Button Inputs and Frequency Selecting
+共有四種可以選擇的頻率，因此使用一個可以數0-3的counter。
+每個數字會對應一個頻率選擇(t的賦值)，並在 uLCD 上印出目前所選擇到的頻率(print函示)。
 ```
 while(1) {
             if (but_UP) {
                 if(counter<3) counter++;
                 else counter=3; 
                 print(counter);
-                ThisThread::sleep_for(50ms);
+                ThisThread::sleep_for(50ms);    // sleep for 時間太短會導致 button 過於靈敏。
             } else if (but_DOWN) {
                 if(counter>0) counter--;
                 else counter=0;
@@ -91,13 +93,62 @@ while(1) {
                 else if (counter==2) t=20;      // 50Hz
                 else if (counter==1) t=40;      // 25Hz
                 else if (counter==0) t=100;     // 10Hz
-                break;
+                break;                          // 按下確認 button 後，跳出選擇迴圈，進入產生波的 while 迴圈。
             }
         }
 ```
 
 ### 6. uLCD Display
+main 裡的初始設定：
+```
+uLCD.background_color(WHITE);        // 將背景設定成白色
+uLCD.cls();
+uLCD.textbackground_color(WHITE);
+int counter=3;
+uLCD.color(RED);                     // 目前選擇到的頻率用紅色字體 highlight
+uLCD.locate(1, 2);
+uLCD.printf("\n100Hz\n");            // 預設為 100Hz 的波
+uLCD.color(BLACK);                   // 其他頻率則以黑色字體依序 print 在 uLCD 顯示器上
+uLCD.locate(1, 4);
+uLCD.printf("\n50Hz\n");
+uLCD.locate(1, 6);
+uLCD.printf("\n25Hz\n");
+uLCD.locate(1, 8);
+uLCD.printf("\n10Hz\n");
+```
 
+print 函式：
+每按一次 button，就會執行一次 print ，印出目前的選擇。
+```
+void print(int counter) {
+    uLCD.color(BLACK);
+    uLCD.locate(1, 2);
+    uLCD.printf("\n100Hz\n");    
+    uLCD.locate(1, 4);
+    uLCD.printf("\n50Hz\n");
+    uLCD.locate(1, 6);
+    uLCD.printf("\n25Hz\n");
+    uLCD.locate(1, 8);
+    uLCD.printf("\n10Hz\n");
+
+    if (counter==3) {                // counter 數到 3，對應的頻率為 100Hz ，以紅色字體 highlight
+        uLCD.color(RED);
+        uLCD.locate(1, 2);
+        uLCD.printf("\n100Hz\n");
+    } else if (counter==2) {        // 以下同理，依照 counter 算到的數字，highlight 對應的頻率
+        uLCD.color(RED);
+        uLCD.locate(1, 4);
+        uLCD.printf("\n50Hz\n");
+    } else if (counter==1) {
+        uLCD.color(RED);
+        uLCD.locate(1, 6);
+        uLCD.printf("\n25Hz\n");
+    } else if (counter==0) {
+        uLCD.color(RED);
+        uLCD.locate(1, 8);
+        uLCD.printf("\n10Hz\n");
+    }
+```
 
 
 
@@ -121,6 +172,7 @@ picoscope是直接量經過 RC filter 完之後的 analog 訊號，所以波的�
 ### 2. 25Hz (cut-off frequency)
 picoscope:
 ![](https://i.imgur.com/FgNW0br.png)
+
 FFT:
 ![](https://i.imgur.com/jXopmbY.png)
 
@@ -130,6 +182,7 @@ FFT:
 ### 3. 50Hz
 picoscope:
 ![](https://i.imgur.com/ULAJtGH.png)
+
 FFT:
 ![](https://i.imgur.com/2CcoxUu.png)
 
@@ -139,5 +192,6 @@ FFT:
 ### 4. 100Hz
 picoscope:
 ![](https://i.imgur.com/wY2XoGB.png)
+
 FFT:
 ![](https://i.imgur.com/c912R14.png)
