@@ -70,11 +70,11 @@ for (int x=500; x<1500; x++) {
 ```
 取樣2000筆資料後，為了排除剛 reset 過後可能還未穩定的波型取樣數值，因此我只 print 出中間1000筆資料，並由 Python program 畫出 FFT 圖。
 
-因為 printf 的執行速度很慢，若將 printf 放在產生波的 for 迴圈中，會使得用 DAC 產生的波之周期被拉長。
+因為 printf 的執行速度很慢，若將 printf 放在產生波的 for 迴圈中，會使得用 DAC 產生的波之周期被拉長。       
 因此我先儲存了足夠的資料數量後，才一次 print 出來。
 
 ### 5. Button Inputs and Frequency Selecting
-共有四種可以選擇的頻率，因此使用一個可以數0-3的counter。
+共有四種可以選擇的頻率，因此使用一個可以數0-3的counter。        
 每個數字會對應一個頻率選擇(t的賦值)，並在 uLCD 上印出目前所選擇到的頻率(print函示)。
 ```
 while(1) {
@@ -156,38 +156,38 @@ void print(int counter) {
 
 ## Results (Sampling Frequency=1000Hz)
 ### 1. 10Hz
-picoscope:
-![](https://i.imgur.com/seohYze.png)
-FFT:
-![](https://i.imgur.com/m62wiTX.png)
+picoscope:     
+![](https://i.imgur.com/seohYze.png)     
+FFT:     
+![](https://i.imgur.com/m62wiTX.png)     
 
-picoscope是直接量經過 RC filter 完之後的 analog 訊號，所以波的振幅大小介於0-3之間。
+picoscope是直接量經過 RC filter 完之後的 analog 訊號，所以波的振幅大小介於0-3之間。     
 而 FFT 圖則是用 ADC sample 過後重建的訊號樣子，所以縱座標的值介於 0-1。
 
-可以由圖中一秒出現10個波峰驗證其頻率(10Hz)。
+可以由圖中一秒出現10個波峰驗證其頻率(10Hz)。     
 並且 frequency response 在頻率為10時有高峰值。
 
 
 ### 2. 25Hz (cut-off frequency)
-picoscope:
-![](https://i.imgur.com/FgNW0br.png)
-FFT:
-![](https://i.imgur.com/jXopmbY.png)
+picoscope:     
+![](https://i.imgur.com/FgNW0br.png)     
+FFT:     
+![](https://i.imgur.com/jXopmbY.png)     
 
-可以由圖中出現的波峰數驗證該訊號之頻率(25Hz)。
+可以由圖中出現的波峰數驗證該訊號之頻率(25Hz)。     
 因為已經達到 RC filter 的截止頻率，可以明顯看到訊號之震幅減弱。
 
 ### 3. 50Hz
-picoscope:
-![](https://i.imgur.com/ULAJtGH.png)
-FFT:
-![](https://i.imgur.com/2CcoxUu.png)
+picoscope:     
+![](https://i.imgur.com/ULAJtGH.png)     
+FFT:     
+![](https://i.imgur.com/2CcoxUu.png)     
 
-每秒 50 個波峰。
-訊號之震幅更小。
+每秒 50 個波峰。     
+訊號之震幅更小。     
 
 ### 4. 100Hz
-picoscope:
-![](https://i.imgur.com/wY2XoGB.png)
-FFT:
-![](https://i.imgur.com/c912R14.png)
+picoscope:     
+![](https://i.imgur.com/wY2XoGB.png)     
+FFT:     
+![](https://i.imgur.com/c912R14.png)     
