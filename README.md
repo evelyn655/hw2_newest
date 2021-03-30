@@ -110,12 +110,33 @@ picoscope:
 FFT:
 ![](https://i.imgur.com/m62wiTX.png)
 
-(picoscope是直接量filter完的analog 訊號，所以0~3，
-但FFT是ADC sample過後的，所以0~1)
-(verify:peak偏左(3)，一秒10個波，freq response peak at 10)
+picoscope是直接量經過 RC filter 完之後的 analog 訊號，所以波的振幅大小介於0~3之間。
+而 FFT 圖則是用 ADC sample 過後重建的訊號樣子，所以縱座標的值介於 0~1。
+
+可以由圖中一秒出現10個波峰驗證其頻率(10Hz)。
+並且 frequency response 在頻率為10時有高峰值。
 
 
+### 2. 25Hz (cut-off frequency)
+picoscope:
+![](https://i.imgur.com/FgNW0br.png)
+FFT:
+![](https://i.imgur.com/jXopmbY.png)
 
+可以由圖中出現的波峰數驗證該訊號之頻率(25Hz)。
+因為已經達到 RC filter 的截止頻率，可以明顯看到訊號之震幅減弱。
 
+### 3. 50Hz
+picoscope:
+![](https://i.imgur.com/ULAJtGH.png)
+FFT:
+![](https://i.imgur.com/2CcoxUu.png)
 
- 
+每秒 50 個波峰。
+訊號之震幅更小。
+
+### 4. 100Hz
+picoscope:
+![](https://i.imgur.com/wY2XoGB.png)
+FFT:
+![](https://i.imgur.com/c912R14.png)
