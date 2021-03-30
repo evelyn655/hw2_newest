@@ -158,7 +158,6 @@ void print(int counter) {
 ### 1. 10Hz
 picoscope:
 ![](https://i.imgur.com/seohYze.png)
-
 FFT:
 ![](https://i.imgur.com/m62wiTX.png)
 
@@ -172,7 +171,6 @@ picoscope是直接量經過 RC filter 完之後的 analog 訊號，所以波的�
 ### 2. 25Hz (cut-off frequency)
 picoscope:
 ![](https://i.imgur.com/FgNW0br.png)
-
 FFT:
 ![](https://i.imgur.com/jXopmbY.png)
 
@@ -182,7 +180,6 @@ FFT:
 ### 3. 50Hz
 picoscope:
 ![](https://i.imgur.com/ULAJtGH.png)
-
 FFT:
 ![](https://i.imgur.com/2CcoxUu.png)
 
@@ -192,6 +189,5 @@ FFT:
 ### 4. 100Hz
 picoscope:
 ![](https://i.imgur.com/wY2XoGB.png)
-
 FFT:
 ![](https://i.imgur.com/c912R14.png)
