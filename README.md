@@ -110,8 +110,8 @@ picoscope:
 FFT:
 ![](https://i.imgur.com/m62wiTX.png)
 
-picoscope是直接量經過 RC filter 完之後的 analog 訊號，所以波的振幅大小介於0~3之間。
-而 FFT 圖則是用 ADC sample 過後重建的訊號樣子，所以縱座標的值介於 0~1。
+picoscope是直接量經過 RC filter 完之後的 analog 訊號，所以波的振幅大小介於0-3之間。
+而 FFT 圖則是用 ADC sample 過後重建的訊號樣子，所以縱座標的值介於 0-1。
 
 可以由圖中一秒出現10個波峰驗證其頻率(10Hz)。
 並且 frequency response 在頻率為10時有高峰值。
